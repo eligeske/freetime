@@ -1,0 +1,73 @@
+﻿.dark-theme { display: none; }
+.light-theme { display: initial; }
+html, body { background: #C8C8C8; }
+.alert { background: rgb(252, 115, 104); }
+.alert.success { background: rgb(52, 195, 92); box-shadow: #8BCF76 0px 0px 5px; }
+.entry-button { background: #D7D7D7; color: #323232; }
+.entry-button:hover { background: #809AC8; }
+#top_bar { background: #fff; color: #000; box-sizing: border-box; border: 5px solid #C8C8C8; border-bottom: none; line-height: 30px; }
+#tool_bar { margin-top:2px; }
+#logo img { position: absolute;top: -1px;left: 0px; padding: 4px; padding-bottom: 5px;}
+#event_name {color: #000; margin-left: 15px; }
+.top-toolbar-item { background-color: #E4E4E4; color: #000;  }
+#top_window_actions {height: 30px;overflow: hidden;}
+#top_window_actions .action-item { box-sizing: border-box; border: 1px solid #fff; background-color: #000 }
+#notifications { background: #fff; box-shadow: rgba(131, 131, 131, 0.61) 0px 3px 1px 1px; }
+#notifications #notifications-btns { background: #CDCDCD; }
+.notification-item .date { color: #140979; }
+#side_menu { background: #C8C8C8; }
+#menu_inner { background: #fff; border-left: 1px solid #fff; border-right: 1px solid #fff; border-bottom: 1px solid #fff;padding-top: 4px; }
+.menu-item { background: #5394F9; color: #fff; border: 1px solid #fff; }
+.menu-item:hover { background: #0344A8; color: #fff; }
+.menu-item.active { background: #000; color: #fff; }
+#page_cont { background: #FFFFFF; border: 1px solid #FFFFFF; }
+.toolbar { color: #000; font-weight: bold; }
+.toolbar .button, .popup .button { color: #0F3CFF; }
+.toolbar .button:hover, .popup .button:hover { color: #0D2712; }
+.toolbar .button.inactive, .popup .button.inactive { color: #D0D0D0; }
+.toolbar .button.inactive:hover, .popup .button.inactive:hover { color: #D0D0D0; }
+
+.start-btn { background: #000; color: #fff !important; border: 1px solid #000 !important; }
+.start-btn:hover { background: #fff; color: #000 !important; }
+
+.grid { border: none; }
+.grid .head thead {background: #000; color: #fff; }
+.grid th { font-weight: bold; }
+.grid td { color: #000; font-weight: bold; }
+.grid tr:nth-child(even) { background: #E8E8E8; }
+.grid .selected { background: #0040A3 !important; color: #fff !important; }
+.grid .selected td { color: #FFF; font-weight: normal; }
+.grid.selectable .body tr:hover { background: #53A0F7; }
+
+.grid .footer {background: #000; }
+.grid .footer .button { color: #fff; }
+.grid .footer .search-div input { border-bottom: 1px solid #4B8DC3; color: #fff; }
+
+.grid th.json-value { background: #444; }
+.grid th.csv-row-value { background: #fff; border-bottom: 1px dashed #c7c7c7; color: #000; }
+.grid td.csv-row-value { border-right: 1px dashed #c7c7c7; }
+.grid th.csv-row-validation { background: #fff; }
+
+.grid .div-body .warning td { color: red; }
+
+.popup { border: 1px solid #414141;   }
+.popup .body { background: #fff; }
+.popup .buttons { background: #F0F0F0; border: 1px solid #C7C7C7; }
+.popup span.flag { color: #282828; }
+.popup .text-content { color: #2c2c2c; }
+.overlay { background: #5a5a5a; }
+.field-row label { color: #000; font-weight: bold; }
+.field-row input, .field-row select { color: #000; }
+.field-row input.invalid { background: #FFBABA; color: #fff; }
+
+.buttons .button { font-weight: bold; }
+
+ .instructions { color: #000; }
+.toggle-button:hover { background: #C7C7C7; }
+.toggle-button.added:hover { background: none; }
+p { color: #3A3A3A; }
+#bottom_logo { color: #222; }
+
+input, select, textarea { outline: none !important; }
+.popup-confirm-body { color: #000; font-weight: bold; }
+.popup .image-preview-cont { color: #000; }

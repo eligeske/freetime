@@ -1,0 +1,83 @@
+﻿body {
+    background: #949494;    
+}
+
+#print_cont {
+    position: absolute;
+    top: 15px; left: 15px; right: 15px; bottom: 45px;
+    background: #fff;
+    padding: 5px 10px;
+    overflow-y:auto;
+}
+
+.print-buttons {
+    position: absolute; bottom: 0px; right: 0px; left: 0px; text-align: right; padding: 10px 15px; -webkit-app-region: drag;
+}
+.print-buttons button {
+    border: 1px solid #00496B; padding: 5px 10px; -webkit-app-region: no-drag;
+}
+.print-buttons button:hover {
+    border: 1px solid #0094ff; padding: 5px 10px;
+}
+
+
+@media print {
+   .print-buttons {
+       display: none;
+   }
+   html, body {
+       background: none; margin: 0; padding: 0;
+   }
+   #print_cont { padding: 0; position: absolute; overflow: visible;
+    top: 15px; left: 15px; right: 15px; bottom: 45px;}
+   
+    tr.page-break  { display: block; page-break-before: always; }
+       
+}
+
+.grid {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height: 150%;
+    background: #fff;
+    overflow: hidden;
+    color: #00496B;
+}
+    
+.grid thead tr {
+    border-bottom: 1px solid #95ADBA;
+}    
+.grid th {  }
+.grid td, .grid th { padding: 3px 2px 3px 6px; border-right: 1px dashed #95ADBA; }
+.grid tr td:last-child, .grid tr th:last-child { border-right: none; }
+
+.grid tbody tr {
+    border-bottom: 1px dashed #95ADBA;
+}
+.grid tbody tr:last-child {
+    border-bottom: none;
+}
+
+.grid table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+    border: 1px solid #95ADBA;
+}
+
+.toolbar { font-family: Arial; padding: 5px; font-weight: bold; }
+
+.place-column { width: 65px; text-align:center; font-weight: bold;  }
+.bib-column { width: 55px;  }
+.fname-column { width: 75px;  }
+.lname-column { width: 100px;  }
+.lap-column { width: 75px; text-align: center; }
+.age-column { width: 40px; text-align: center; }
+.team-column { width: 40px; }
+
+
+.print-logo {
+    float: right;
+    height: 18px;
+}
+
