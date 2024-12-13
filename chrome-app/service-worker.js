@@ -62,12 +62,31 @@ const urlsToCache = [
 ];
 
 self.addEventListener("install", (event) => {
+  self.skipWaiting();
+
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
+    caches.open(CACHE_NAME).then((cache) => {
+      return Promise.all([
+        cache.addAll([
+          "/freetime/chrome-app/html/application.html",
+          "/freetime/chrome-app/css/timing.css",
+          "/freetime/chrome-app/js/application.js",
+          "/freetime/chrome-app/vendors/jquery.min.js",
+        ]),
+        cache.addAll(urlsToCache),
+      ]);
+    })
   );
 });
 
 self.addEventListener("fetch", (event) => {
+  if (event.request.url.endsWith(".html")) {
+    event.respondWith(
+      fetch(event.request).catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
   event.respondWith(
     caches
       .match(event.request)
