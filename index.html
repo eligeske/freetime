@@ -1,1 +1,79 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hidriv - Free Timing Software</title>
+    <link rel="manifest" href="/freetime/manifest.json" />
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+      }
+      .container {
+        text-align: center;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 1rem;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 1rem;
+      }
+      p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
+      .enter-app {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 12px 24px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 500;
+        transition: background-color 0.2s;
+      }
+      .enter-app:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Hidriv</h1>
+      <p>Free and open-source timing software for your racing events.</p>
+      <a href="/freetime/html/application.html" class="enter-app"
+        >Enter Application</a
+      >
+    </div>
+
+    <script>
+      // Register service worker for PWA support
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/freetime/service-worker.js")
+            .then((registration) => {
+              console.log("ServiceWorker registration successful");
+            })
+            .catch((err) => {
+              console.log("ServiceWorker registration failed: ", err);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
