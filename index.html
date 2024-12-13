@@ -55,7 +55,7 @@
     <div class="container">
       <h1>Welcome to Hidriv</h1>
       <p>Free and open-source timing software for your racing events.</p>
-      <a href="/freetime/html/application.html" class="enter-app"
+      <a href="/freetime/chrome-app/html/application.html" class="enter-app"
         >Enter Application</a
       >
     </div>
@@ -65,7 +65,7 @@
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
           navigator.serviceWorker
-            .register("/freetime/service-worker.js")
+            .register("/freetime/chrome-app/service-worker.js")
             .then((registration) => {
               console.log("ServiceWorker registration successful");
             })
