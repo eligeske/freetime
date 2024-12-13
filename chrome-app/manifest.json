@@ -1,20 +1,43 @@
 ﻿{
-    "name": "HIDRIV Timing App",
-    "description": "Quickly and accurately time a race event manually with the hidriv timing application.",
-    "version": "1.2.2",
-    "manifest_version": 2,
-    "app": {
-        "background": {
-            "scripts": [ "background.js" ]
-        }
+  "name": "Hidriv",
+  "short_name": "Hidriv",
+  "description": "Hidriv Application - Free timing software",
+  "start_url": "/html/application.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/imgs/hidriv-chromelogo-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
     },
-  "icons": {
-    "16": "hidriv-chromelogo-16.png",
-    "128": "hidriv-chromelogo-128.png"
-  },
-  "permissions": [
-    "unlimitedStorage",
-    "notifications",
-    {"fileSystem": ["write","retainEntries", "directory"]} 
+    {
+      "src": "/imgs/hidriv-chromelogo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/imgs/hidriv-chromelogo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "scope": "/",
+  "orientation": "any",
+  "categories": ["sports", "utilities"],
+  "prefer_related_applications": false,
+  "screenshots": [
+    {
+      "src": "/imgs/hidriv-desktop.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/imgs/hidriv-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png"
+    }
   ]
 }

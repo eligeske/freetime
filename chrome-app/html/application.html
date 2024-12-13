@@ -1,9 +1,22 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>hidriv</title>    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="Hidriv Application - Free timing software"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Hidriv" />
+    <title>hidriv</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/imgs/hidriv-chromelogo-128.png" />
     <link rel="stylesheet" href="../css/open-sans.css" />
     <link rel="stylesheet" href="../css/timing.css" />
+
     <script src="../vendors/jquery.min.js"></script>
     <script src="../vendors/jquery-ui.min.js"></script>
     <script src="../vendors/underscore.min.js"></script>
@@ -18,57 +31,102 @@
     <script src="../js/dataTemplate.js"></script>
     <script src="../js/application.js"></script>
     <script src="../js/application_load.js"></script>
-</head>
-<body data-layout="nomenu" class="offline">
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/service-worker.js")
+            .then((registration) => {
+              console.log("ServiceWorker registration successful");
+            })
+            .catch((err) => {
+              console.log("ServiceWorker registration failed: ", err);
+            });
+        });
+      }
+    </script>
+  </head>
+  <body data-layout="nomenu" class="offline">
     <div id="top_bar">
-        <span id="logo"><img class="light-theme" src="../imgs/top_bar_logo.png" /><img class="dark-theme" width="73" src="../imgs/entry_logo.png" /></span><span style="position: absolute; top: 1px; left: 100px;" id="event_name"></span>
-        <div id="tool_bar" class="top-toolbar">
-            <span id="online_status_button" class="top-toolbar-item icon-globe" data-title="Internet connection status"></span>
-            <span id="notification_button" class="top-toolbar-item icon-bell">notifications</span>
-        </div>
-        <div id="top_window_actions">
-            <span class="action-item" id="window_minimize" style="background-image: url(../imgs/more_windows.png)">&nbsp;</span>
-            <span class="action-item" id="window_maximize" style="background-image: url(../imgs/window.png)">&nbsp;</span>
-            <span class="action-item" id="window_close" style="background-image: url(../imgs/close.png)">&nbsp;</span>
-        </div>
-        <div id="notifications">
-            <div class="message-list">
-                
-            </div>
-            <div id="notifications-btns">
-                <a class="button" id="notifCloseBtn" style="border: 0; height: 33px; line-height: 33px; padding: 0 10px; background: none; cursor: pointer; margin: 0 15px 0 0; ">Close</a>
-            </div>
-        </div>
+      <span id="logo"
+        ><img class="light-theme" src="../imgs/top_bar_logo.png" /><img
+          class="dark-theme"
+          width="73"
+          src="../imgs/entry_logo.png" /></span
+      ><span
+        style="position: absolute; top: 1px; left: 100px"
+        id="event_name"
+      ></span>
     </div>
     <div id="side_menu">
-        <div id="menu_inner">
-            <a href="#racers" class="menu-item" id="menu_racers">
-                <div class="item-icon" style="background-image: url(../imgs/group.png)">&nbsp;</div>
-                <span class="item-text">Racers</span>
-            </a>
-            <a href="#start" class="menu-item" id="menu_single_start">
-                <div class="item-icon" style="background-image: url(../imgs/flag.png)">&nbsp;</div>
-                <span class="item-text">Start</span>
-            </a>
-            <a href="#category_start" class="menu-item" id="menu_category_start">
-                <div class="item-icon" style="background-image: url(../imgs/flag.png)">&nbsp;</div>
-                <span class="item-text">Start</span>
-            </a>
-            <a href="#laps" class="menu-item" id="menu_timing">
-                <div class="item-icon" style="background-image: url(../imgs/stopwatch.png)">&nbsp;</div>
-                <span class="item-text">Laps</span>
-            </a>
-            <a href="#results" class="menu-item" id="menu_results">
-                <div class=" item-icon" style="background-image: url(../imgs/podium.png)">&nbsp;</div>
-                <span class="item-text">Results</span>
-            </a>
-            <a href="#settings" class="menu-item" id="menu_settings">
-                <div class=" item-icon" style="background-image: url(../imgs/settings.png)">&nbsp;</div>
-                <span class="item-text">Settings</span>
-            </a>
-        </div>
+      <div id="menu_inner">
+        <a href="#racers" class="menu-item" id="menu_racers">
+          <div
+            class="item-icon"
+            style="background-image: url(../imgs/group.png)"
+          >
+            &nbsp;
+          </div>
+          <span class="item-text">Racers</span>
+        </a>
+        <a href="#start" class="menu-item" id="menu_single_start">
+          <div
+            class="item-icon"
+            style="background-image: url(../imgs/flag.png)"
+          >
+            &nbsp;
+          </div>
+          <span class="item-text">Start</span>
+        </a>
+        <a href="#category_start" class="menu-item" id="menu_category_start">
+          <div
+            class="item-icon"
+            style="background-image: url(../imgs/flag.png)"
+          >
+            &nbsp;
+          </div>
+          <span class="item-text">Start</span>
+        </a>
+        <a href="#laps" class="menu-item" id="menu_timing">
+          <div
+            class="item-icon"
+            style="background-image: url(../imgs/stopwatch.png)"
+          >
+            &nbsp;
+          </div>
+          <span class="item-text">Laps</span>
+        </a>
+        <a href="#results" class="menu-item" id="menu_results">
+          <div
+            class="item-icon"
+            style="background-image: url(../imgs/podium.png)"
+          >
+            &nbsp;
+          </div>
+          <span class="item-text">Results</span>
+        </a>
+        <a href="#settings" class="menu-item" id="menu_settings">
+          <div
+            class="item-icon"
+            style="background-image: url(../imgs/settings.png)"
+          >
+            &nbsp;
+          </div>
+          <span class="item-text">Settings</span>
+        </a>
+        <hr />
+        <a onclick="hidriv.closeEvent()" class="menu-item" id="menu_exit">
+          <span class="item-text">Exit</span>
+        </a>
+      </div>
     </div>
     <div id="page_cont"></div>
-    <div id="bottom_logo">powered by <span style="font-style: italic; text-decoration: underline; font-size: 14px">hidriv</span>&nbsp;&nbsp;free timing software &copy; 2015</div>
-</body>
+    <div id="bottom_logo">
+      powered by
+      <span
+        style="font-style: italic; text-decoration: underline; font-size: 14px"
+        >hidriv</span
+      >&nbsp;&nbsp;free timing software &copy; 2015
+    </div>
+  </body>
 </html>
