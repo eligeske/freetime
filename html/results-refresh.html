@@ -1,10 +1,9 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+  <head>
     <title>hidriv</title>
 
     <link rel="stylesheet" href="../css/print.css" />
-
     <script src="../vendors/jquery.min.js"></script>
     <script src="../vendors/jquery-ui.min.js"></script>
     <script src="../vendors/underscore.min.js"></script>
@@ -14,17 +13,30 @@
     <script src="../lib/appComponents.js"></script>
     <script src="../code/storage.js"></script>
     <script src="../code/timing.js"></script>
-    <script src="../js/static.js"></script>
     <script src="../js/views.js"></script>
     <script src="../js/dataTemplate.js"></script>
     <script src="../js/application.js"></script>
-    <script src="../js/print-racers-inline.js"></script>
-</head>
-<body>    
-    <div id="print_cont"></div>   
+    <script src="../js/refresh-results-inline.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("../service-worker.js")
+            .then((registration) => {
+              console.log("ServiceWorker registration successful");
+            })
+            .catch((err) => {
+              console.log("ServiceWorker registration failed: ", err);
+            });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="print_cont"></div>
     <div class="print-buttons">
-        <button id="print_btn">Print</button>
-        <button id="close_btn">Close</button>
+      <button id="print_btn">Refresh</button>
+      <button id="close_btn">Close</button>
     </div>
-</body>
+  </body>
 </html>

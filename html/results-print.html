@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+  <head>
     <title>hidriv</title>
 
     <link rel="stylesheet" href="../css/print.css" />
@@ -17,12 +17,26 @@
     <script src="../js/dataTemplate.js"></script>
     <script src="../js/application.js"></script>
     <script src="../js/print-results-inline.js"></script>
-</head>
-<body>    
-    <div id="print_cont"></div>   
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("../service-worker.js")
+            .then((registration) => {
+              console.log("ServiceWorker registration successful");
+            })
+            .catch((err) => {
+              console.log("ServiceWorker registration failed: ", err);
+            });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="print_cont"></div>
     <div class="print-buttons">
-        <button id="print_btn">Print</button>
-        <button id="close_btn">Close</button>
+      <button id="print_btn">Print</button>
+      <button id="close_btn">Close</button>
     </div>
-</body>
+  </body>
 </html>

@@ -4,28 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hidriv - Free Timing Software</title>
-    <link rel="manifest" href="/freetime/manifest.json" />
-    <link rel="prefetch" href="/freetime/chrome-app/html/application.html" />
-    <link rel="prefetch" href="/freetime/chrome-app/html/racers-print.html" />
-    <link rel="prefetch" href="/freetime/chrome-app/html/results-print.html" />
-    <link
-      rel="prefetch"
-      href="/freetime/chrome-app/html/results-refresh.html"
-    />
-    <link rel="prefetch" href="/freetime/chrome-app/css/timing.css" />
-    <link rel="prefetch" href="/freetime/chrome-app/css/dark-css.css" />
-    <link rel="prefetch" href="/freetime/chrome-app/css/light-css.css" />
-    <link rel="prefetch" href="/freetime/chrome-app/js/application.js" />
-    <link rel="prefetch" href="/freetime/chrome-app/js/views.js" />
-    <link rel="prefetch" href="/freetime/chrome-app/lib/lib.js" />
-    <link rel="prefetch" href="/freetime/chrome-app/lib/domFileStorage.js" />
-    <link rel="prefetch" href="/freetime/chrome-app/lib/appComponents.js" />
-    <link rel="prefetch" href="/freetime/chrome-app/vendors/jquery.min.js" />
-    <link rel="prefetch" href="/freetime/chrome-app/vendors/jquery-ui.min.js" />
-    <link
-      rel="prefetch"
-      href="/freetime/chrome-app/vendors/underscore.min.js"
-    />
+
     <style>
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -70,31 +49,76 @@
       .enter-app:hover {
         background-color: #0056b3;
       }
+      .install-instructions {
+        margin-top: 2rem;
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+        display: block; /* Hidden by default */
+      }
+      .install-instructions.show {
+        display: block;
+      }
+      .install-steps {
+        text-align: left;
+        margin: 1rem 0;
+        padding-left: 1.5rem;
+      }
+      .install-steps li {
+        margin-bottom: 0.5rem;
+        color: #555;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <h1>Welcome to Hidriv</h1>
       <p>Free and open-source timing software for your racing events.</p>
-      <a href="/freetime/chrome-app/html/application.html" class="enter-app"
-        >Enter Application</a
-      >
+      <a href="/html/application.html" class="enter-app">Enter Application</a>
+
+      <div class="install-instructions">
+        <h3>Install Hidriv on your device</h3>
+        <ul class="install-steps">
+          <li>Chrome/Edge: Click the install icon (⊕) in the address bar</li>
+          <li>
+            Safari iOS: Tap the share button and select "Add to Home Screen"
+          </li>
+          <li>Safari MacOS: Click File > Add to Dock</li>
+        </ul>
+      </div>
     </div>
 
     <script>
       // Register service worker for PWA support
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/freetime/chrome-app/service-worker.js")
-            .then((registration) => {
-              console.log("ServiceWorker registration successful");
-            })
-            .catch((err) => {
-              console.log("ServiceWorker registration failed: ", err);
-            });
-        });
-      }
+      // if ("serviceWorker" in navigator) {
+      //   window.addEventListener("load", () => {
+      //     navigator.serviceWorker
+      //       .register("/service-worker.js")
+      //       .then((registration) => {
+      //         console.log("ServiceWorker registration successful");
+
+      //         // Show install instructions if the app is installable
+      //         let deferredPrompt;
+      //         window.addEventListener("beforeinstallprompt", (e) => {
+      //           e.preventDefault();
+      //           deferredPrompt = e;
+      //           document
+      //             .querySelector(".install-instructions")
+      //             .classList.add("show");
+      //         });
+
+      //         // Hide instructions if already installed
+      //         window.addEventListener("appinstalled", () => {
+      //           document
+      //             .querySelector(".install-instructions")
+      //             .classList.remove("show");
+      //         });
+      //       })
+      //       .catch((err) => {
+      //         console.log("ServiceWorker registration failed: ", err);
+      //       });
+      //   });
+      // }
     </script>
   </body>
 </html>
